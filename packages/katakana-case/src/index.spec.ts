@@ -1,7 +1,7 @@
 import { katakanaCase } from '.';
 import { allHiraganas, allKatakanas } from '../../jp-char-list';
 
-describe('hiraganaToKatakana', () => {
+describe('katakanaCase', () => {
   it('converts hiragana to katakana', () => {
     const input = 'こんにちは';
     const expected = 'コンニチハ';
