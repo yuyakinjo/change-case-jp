@@ -2,7 +2,8 @@
   "name": "change-case-jp",
   "version": "1.0.0",
   "description": "Convert from hiragana to katakana or vice versa.",
-  "main": "index.js",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
   "scripts": {
     "test": "jest",
     "prettier": "prettier --check --write './**/**'",
