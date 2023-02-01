@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "prettier": "prettier --check --write './**/**'"
   },
   "keywords": [
     "change-case-jp",
