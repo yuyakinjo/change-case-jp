@@ -13,19 +13,21 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: latest
       - uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
           registry-url: https://registry.npmjs.org
           scope: change-case-jp
           always-auth: true
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
-      - run: npx can-npm-publish --verbose
+          cache: 'pnpm'
+      - run: pnpm dlx can-npm-publish --verbose
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - run: npm ci
-      - run: npm run test
-      - run: npm publish --access=public
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run test
+      - run: pnpm publish --access=public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
