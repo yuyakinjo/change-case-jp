@@ -1,4 +1,4 @@
-import { exception } from '../../jp-char-list';
+import { exception } from '../../internal/jp-char-list';
 
 const searchHiragana = new RegExp(/[ぁ-ん]/g);
 
