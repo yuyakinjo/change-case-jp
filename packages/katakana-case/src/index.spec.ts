@@ -1,5 +1,5 @@
 import { katakanaCase } from '.';
-import { allHiraganas, allKatakanas } from '../../hiragana-case/char-list';
+import { allHiraganas, allKatakanas } from '../../jp-char-list';
 
 describe('hiraganaToKatakana', () => {
   it('converts hiragana to katakana', () => {
