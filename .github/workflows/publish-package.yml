@@ -19,6 +19,8 @@ jobs:
           registry-url: https://registry.npmjs.org
           scope: change-case-jp
           always-auth: true
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
       - run: npx can-npm-publish --verbose
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
