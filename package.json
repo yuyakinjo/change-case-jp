@@ -15,6 +15,9 @@
     "katakana",
     "japanese char transform"
   ],
+  "repository": {
+    "url": "git://github.com/yuyakinjo/change-case-jp"
+  },
   "author": "https://github.com/yuyakinjo",
   "license": "",
   "devDependencies": {
