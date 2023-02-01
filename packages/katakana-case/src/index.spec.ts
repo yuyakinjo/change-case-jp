@@ -9,8 +9,8 @@ describe('hiraganaToKatakana', () => {
   });
 
   it('handles mixed hiragana and katakana text', () => {
-    const input = 'ひらがなとカタカナ';
-    const expected = 'ヒラガナトカタカナ';
+    const input = 'ハッピーラッキーこんにちはベイビー';
+    const expected = 'ハッピーラッキーコンニチハベイビー';
     expect(katakanaCase(input)).toBe(expected);
   });
 
