@@ -17,13 +17,13 @@ jobs:
         with:
           node-version: 'lts/*'
           registry-url: https://registry.npmjs.org
-          scope: change-case-jp
+          scope: hey-mom
           always-auth: true
       - run: npx can-npm-publish --verbose
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm run test
-      - run: pnpm publish --access=public
+      - run: npm ci
+      - run: npm run test
+      - run: npm publish --access=public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
