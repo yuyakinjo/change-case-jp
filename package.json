@@ -1,11 +1,14 @@
 {
   "name": "change-case-jp",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Convert from hiragana to katakana or vice versa.",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
   "scripts": {
     "test": "jest",
-    "prettier": "prettier --check --write './**/**'"
+    "prettier": "prettier --check --write './**/**'",
+    "prepare": "rm -rf dist && tsc",
+    "build": "rm -rf dist && tsc"
   },
   "keywords": [
     "change-case-jp",
@@ -15,6 +18,10 @@
     "katakana",
     "japanese char transform"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yuyakinjo/change-case-jp.git"
+  },
   "author": "https://github.com/yuyakinjo",
   "license": "",
   "devDependencies": {
