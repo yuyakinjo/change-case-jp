@@ -1,5 +1,6 @@
+import { exception } from '../../jp-char-list';
+
 const searchKatakana = new RegExp(/[ァ-ン]/g);
-const exception = { vu: { katakana: 'ヴ', hiragana: 'ゔ' } };
 
 export const hiraganaCase = (input: string) =>
   input
