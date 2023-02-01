@@ -1,7 +1,7 @@
 {
   "name": "change-case-jp",
   "version": "1.0.0",
-  "description": "",
+  "description": "Convert from hiragana to katakana or vice versa.",
   "main": "index.js",
   "scripts": {
     "test": "jest",
