@@ -28,6 +28,6 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - run: pnpm install --frozen-lockfile
       - run: pnpm run test
-      - run: pnpm publish --access=public
+      - run: pnpm publish --publish-branch publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
