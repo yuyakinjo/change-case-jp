@@ -5,15 +5,23 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2
+      - name: CheckOut
+        uses: actions/checkout@v3
+
+      - name: SetUp
+        uses: pnpm/action-setup@v2
         with:
           version: latest
-      - uses: actions/setup-node@v3
+
+      - name: NodeJS SetUp
+        uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
           registry-url: https://registry.npmjs.org
           scope: change-case-jp
           always-auth: true
           cache: 'pnpm'
-      - run: pnpm test
+      - name: Package Install
+        run: pnpm install
+      - name: Test
+        run: pnpm test
