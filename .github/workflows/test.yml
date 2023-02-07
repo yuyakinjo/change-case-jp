@@ -1,0 +1,27 @@
+name: Test with Jest
+on:
+  push:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: CheckOut
+        uses: actions/checkout@v3
+
+      - name: SetUp
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+
+      - name: NodeJS SetUp
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
+          registry-url: https://registry.npmjs.org
+          scope: change-case-jp
+          always-auth: true
+          cache: 'pnpm'
+      - name: Package Install
+        run: pnpm install
+      - name: Test
+        run: pnpm test
