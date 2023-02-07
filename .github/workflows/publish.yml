@@ -6,28 +6,41 @@ on:
   workflow_dispatch:
     branches: [publish]
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
     steps:
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2
+      - name: CheckOut
+        uses: actions/checkout@v3
+
+      - name: SetUp pnpm
+        uses: pnpm/action-setup@v2
         with:
           version: latest
-      - uses: actions/setup-node@v3
+
+      - name: NodeJS SetUp
+        uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
           registry-url: https://registry.npmjs.org
           scope: change-case-jp
           always-auth: true
           cache: 'pnpm'
-      - run: pnpm dlx can-npm-publish --verbose
+
+      - name: Prepare Publish
+        run: pnpm dlx can-npm-publish --verbose
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm run test
-      - run: pnpm publish --publish-branch publish
+
+      - name: Package Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Test
+        run: pnpm run test
+
+      - name: Publish
+        run: pnpm publish --publish-branch publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
