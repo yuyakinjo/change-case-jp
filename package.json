@@ -1,6 +1,6 @@
 {
   "name": "change-case-jp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Convert from hiragana to katakana or vice versa.",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
