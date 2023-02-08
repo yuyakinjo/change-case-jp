@@ -23,14 +23,14 @@ hiraganaCase('ドラえもん');
 
 ## Examples
 
-- hiraganaCase
+### hiraganaCase
 
 ```typescript
 hiraganaCase('ドラえもん');
 // => "どらえもん"
 ```
 
-- hiraganaCase
+### hiraganaCase
 
 ```typescript
 katakanaCase('ドラえもん');
