@@ -23,14 +23,14 @@ hiraganaCase('ドラえもん');
 
 ## Examples
 
-- hiraganaCase
+### hiraganaCase
 
 ```typescript
 hiraganaCase('ドラえもん');
 // => "どらえもん"
 ```
 
-- hiraganaCase
+### hiraganaCase
 
 ```typescript
 katakanaCase('ドラえもん');
@@ -53,3 +53,7 @@ To run tests, run the following command
 ```bash
 pnpm run test
 ```
+
+## License
+
+MIT
