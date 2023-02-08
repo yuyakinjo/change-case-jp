@@ -53,3 +53,7 @@ To run tests, run the following command
 ```bash
 pnpm run test
 ```
+
+## License
+
+MIT
