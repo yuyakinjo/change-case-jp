@@ -30,7 +30,7 @@ hiraganaCase('ドラえもん');
 // => "どらえもん"
 ```
 
-### hiraganaCase
+### katakanaCase
 
 ```typescript
 katakanaCase('ドラえもん');
