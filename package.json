@@ -8,7 +8,9 @@
     "test": "vitest",
     "prettier": "prettier --check --write './**/**'",
     "prepare": "rm -rf dist && tsc",
-    "build": "rm -rf dist && tsc"
+    "build": "rm -rf dist && tsc",
+    "lint:check": "biome check --apply packages",
+    "lint:write": "biome format --write packages"
   },
   "keywords": [
     "change-case-jp",
