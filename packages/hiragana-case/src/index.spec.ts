@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import { hiraganaCase } from '.';
 import { allHiraganas, allKatakanas } from '../../internal/jp-char-list';
 
