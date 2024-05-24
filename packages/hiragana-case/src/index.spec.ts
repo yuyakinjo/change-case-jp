@@ -1,33 +1,33 @@
-import { describe, expect, it } from 'vitest';
-import { hiraganaCase } from '.';
-import { allHiraganas, allKatakanas } from '../../internal/jp-char-list';
+import { describe, expect, it } from "vitest";
+import { hiraganaCase } from ".";
+import { allHiraganas, allKatakanas } from "../../internal/jp-char-list";
 
-describe('hiraganaCase', () => {
-  it('converts katakana to hiragana', () => {
-    const input = 'コンニチハ';
-    const expected = 'こんにちは';
+describe("hiraganaCase", () => {
+  it("converts katakana to hiragana", () => {
+    const input = "コンニチハ";
+    const expected = "こんにちは";
     expect(hiraganaCase(input)).toBe(expected);
   });
 
-  it('handles mixed hiragana and katakana text', () => {
-    const input = 'ハッピーラッキーこんにちはベイビー';
-    const expected = 'はっぴーらっきーこんにちはべいびー';
+  it("handles mixed hiragana and katakana text", () => {
+    const input = "ハッピーラッキーこんにちはベイビー";
+    const expected = "はっぴーらっきーこんにちはべいびー";
     expect(hiraganaCase(input)).toBe(expected);
   });
 
-  it('returns empty string for empty input', () => {
-    const input = '';
-    const expected = '';
+  it("returns empty string for empty input", () => {
+    const input = "";
+    const expected = "";
     expect(hiraganaCase(input)).toBe(expected);
   });
 
-  it('returns alphabet input', () => {
-    const input = 'alphabet';
-    const expected = 'alphabet';
+  it("returns alphabet input", () => {
+    const input = "alphabet";
+    const expected = "alphabet";
     expect(hiraganaCase(input)).toBe(expected);
   });
 
-  it('replace all katakanas to hiraganas', () => {
+  it("replace all katakanas to hiraganas", () => {
     const input = allKatakanas;
     const expected = allHiraganas;
     expect(hiraganaCase(input)).toBe(expected);
